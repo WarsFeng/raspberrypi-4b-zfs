@@ -1,0 +1,1 @@
+rootwait rootfstype=zfs root=ZFS=r-zcat/gentoo/os zfs.zfs_arc_max=67108864 dwc_otg.lpm_enable=0 console=tty1 console=ttyAMA0,115200 zfs_force=1

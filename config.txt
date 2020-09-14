@@ -1,0 +1,28 @@
+# set 64 bit mode
+arm_64bit=1
+
+enable_gic=1
+armstub=armstub8-gic.bin
+
+initramfs initramfs-5.4.27-raspberrypi-v8+.img followkernel
+
+# have a properly sized image
+disable_overscan=1
+hdmi_group=1
+hdmi_mode=31
+overscan_left=50
+overscan_right=50
+overscan_top=50
+overscan_bottom=50
+## for sound over HDMI
+hdmi_drive=2
+# Enable audio (loads snd_bcm2835)
+dtparam=audio=on
+
+# lets have the VC4 hardware accelerated video
+dtoverlay=vc4-fkms-v3d
+
+# gpu_mem is for closed-source driver only; since we are only using the
+# open-source driver here, set low
+gpu_mem=16
+
